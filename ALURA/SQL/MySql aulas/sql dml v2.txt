@@ -1,0 +1,179 @@
+-- tbtipocli
+insert into tbtipocli (codtipocli, desctipocli)
+values ('01','V.I.P');
+
+insert into tbtipocli (codtipocli, desctipocli)
+values ('02','5 estrelas');
+
+insert into tbtipocli (codtipocli, desctipocli)
+values ('03','3 estrelas');
+
+insert into tbtipocli (codtipocli, desctipocli)
+values ('04','Normal');
+
+insert into tbtipocli (codtipocli, desctipocli)
+values ('05','Universitário');
+
+select * from tbtipocli;
+-- delete from tbtipocli;
+
+-- tbtipoprod
+insert into tbtipoprod (codtipoprod, desctipoprod)
+values ('01','Alimentos');
+
+insert into tbtipoprod (codtipoprod, desctipoprod)
+values ('02','Vestimenta');
+
+insert into tbtipoprod (codtipoprod, desctipoprod)
+values ('03','Artigos esportivos');
+
+insert into tbtipoprod (codtipoprod, desctipoprod)
+values ('04','Ferramentas');
+
+insert into tbtipoprod (codtipoprod, desctipoprod)
+values ('05','Brinquedos');
+
+select * from tbtipoprod;
+-- delete from tbtipoprod;
+
+-- tbcli
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0001', 'Maria da Silva', 'Rua Flores, 45', str_to_date('01/05/1910','%d/%m/%Y'), 1.65, '01');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0002', 'Pedro Oliveira', 'Av. Gomes, 153', str_to_date('20/08/1995','%d/%m/%Y'), 1.75, '01');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0003', 'Orlando Costa', 'Rua Miranda, 5', str_to_date('15/09/2000','%d/%m/%Y'), 1.7, '02');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0004', 'Kelly Costa', 'Rua Orlando Silva, 154', str_to_date('30/10/1999','%d/%m/%Y'), 1.01, '02');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0005', 'Miranda Flores', 'Av. Costa Barros, 600', str_to_date('29/08/1974','%d/%m/%Y'), 1.20, '03');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0006', 'Roberto Leal', 'Rua Portugal, 30', str_to_date('16/11/1995','%d/%m/%Y'), 1.6, '03');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0007', 'Felipe Gomes', 'Rua A, 145', str_to_date('15/07/2010','%d/%m/%Y'), 1.05, '04');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0008', 'Jose da Silva', 'Travessa Daome, 45-A', str_to_date('09/06/1996','%d/%m/%Y'), 2.15, '04');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0009', 'Maria da Silva Oliveira', 'Rua Flores, 145', str_to_date('01/05/1980','%d/%m/%Y'), 1.85, '05');
+
+insert into tbcli
+(codcli, nomecli, endcli, datanasccli, alturacli, codtipocli)
+values
+('0010', 'Pedro Pedreira da Rocha', 'Rua Pedregulho, 44', str_to_date('25/11/2001','%d/%m/%Y'), 1.95, '05');
+
+select * from tbcli;
+-- delete from tbcli;
+
+-- tbprod
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0001', 'Farinha', 10.11, 'KG', '01');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0002', 'Arroz', 25.0, 'PCT', '01');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0003', 'Camisa Polo', 30.0, 'PECA', '02');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0004', 'Saia Rodada', 160.0, 'PECA', '02');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0005', 'Bola Volei', 150.0, 'PECA', '03');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0006', 'Haltere 10KG', 60.0, 'PECA', '03');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0007', 'Prego pequeno', 8.5, 'KG', '04');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0008', 'Alicate', 35.0, 'PECA', '04');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0009', 'Quebra-cabeças 5000 pcs', 88.6, 'PECA', '05');
+
+insert into tbprod
+(codprod, descprod, precoprod, unidprod, codtipoprod)
+values
+('0010', 'Bolinhas', 15.0, 'LITRO', '05');
+
+select * from tbprod;
+-- delete from tbprod;
+
+-- tbvenda
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000001', 150, '0001', '0001');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000002', 250, '0001', '0002');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000003',  30, '0001', '0003');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000004',  40, '0002', '0004');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000005',  50, '0002', '0005');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000006',  70, '0002', '0006');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000007', 140, '0003', '0007');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000008', 170, '0003', '0008');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000009', 180, '0003', '0009');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000010', 190, '0004', '0010');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000011',  11, '0004', '0001');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000012', 112, '0004', '0002');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000013', 145, '0005', '0003');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000014',  45, '0005', '0004');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000015', 165, '0005', '0005');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000016', 165, '0006', '0006');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000017', 170, '0006', '0007');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000018',  67, '0006', '0008');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000019', 150, '0007', '0009');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000020', 198, '0007', '0010');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000021', 177, '0007', '0001');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000022',  88, '0008', '0002');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000023', 233, '0008', '0003');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000024', 140, '0008', '0004');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000025', 150, '0009', '0005');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000026',  50, '0009', '0006');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000027', 900, '0009', '0007');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000028', 170, '0010', '0008');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000029', 180, '0010', '0009');
+insert into tbvenda(numvenda, qtdevenda, codcli, codprod) values ('000030',  90, '0010', '0010');
+
+select * from tbvenda;

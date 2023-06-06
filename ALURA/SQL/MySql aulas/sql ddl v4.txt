@@ -1,0 +1,97 @@
+create database dbvenda;
+
+use dbvenda;
+
+-- tbtipocli
+create table tbtipocli(
+codtipocli char(02) unique not null,
+desctipocli varchar(30) not null
+);
+
+alter table tbtipocli
+add primary key(codtipocli);
+
+create unique index idxtipocli
+on tbtipocli(codtipocli);
+
+-- tbtipoprod
+create table tbtipoprod(
+codtipoprod char(02) unique not null,
+desctipoprod varchar(30) not null
+);
+
+alter table tbtipoprod
+add primary key(codtipoprod);
+
+create unique index idxtipoprod
+on tbtipoprod(codtipoprod);
+
+-- tbcli
+create table tbcli(
+codcli char(4) unique not null,
+nomecli varchar(30) not null,
+endcli varchar(40),
+datanasccli date check (datanasccli >= STR_TO_DATE('01/01/1900', '%d/%m/%Y')),
+alturacli decimal(3,2) check (alturacli >= 1.0),
+codtipocli char(2) null
+);
+
+alter table tbcli
+add primary key(codcli);
+
+create unique index idxcli
+on tbcli(codcli);
+
+alter table tbcli
+add foreign key (codtipocli)
+references tbtipocli(codtipocli)
+on delete set null;
+
+-- tbprod
+create table tbprod(
+codprod char(4) unique not null,
+descprod varchar(30) not null,
+precoprod decimal (9,2) check(precoprod>=0.0),
+unidprod varchar(10) check(unidprod in('KG','PECA','PCT','LITRO')),
+codtipoprod char(02) null
+);
+
+alter table tbprod
+add primary key(codprod);
+
+create unique index idxprod
+on tbprod(codprod);
+
+alter table tbprod
+add foreign key(codtipoprod)
+references tbtipoprod(codtipoprod)
+on delete set null;
+
+-- tbvenda
+create table tbvenda(
+numvenda char(6) unique not null,
+datahoravenda timestamp default current_timestamp,
+qtdevenda smallint check(qtdevenda>0),
+codcli char(4) not null,
+codprod char(4) not null
+);
+
+alter table tbvenda
+add primary key(numvenda);
+
+create unique index idxvenda
+on tbvenda(numvenda);
+
+alter table tbvenda
+add foreign key(codcli)
+references tbcli(codcli)
+on delete cascade;
+
+alter table tbvenda
+add foreign key(codprod)
+references tbprod(codprod)
+on delete restrict;
+
+
+show tables;
+describe tbtipocli;
