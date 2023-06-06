@@ -1,0 +1,7 @@
+ ----- VPCs -----
+
+AWS -> https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html
+
+GCP -> https://cloud.google.com/vpc/docs/vpc?hl=pt-br
+
+Azure -> https://learn.microsoft.com/pt-br/azure/virtual-network/virtual-networks-overview
