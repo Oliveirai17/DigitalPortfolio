@@ -1,0 +1,11 @@
+>>>GIT<<<
+
+-> clonar repositorio localmente                                | git clone <link repositorio>
+-> vizualizar os historicos                                     | git log / git log --oneline
+-> atualizar seu repositorio local com as alterações do git     | git pull
+-> vizualizar todas as alterações não comitadas	                | git status
+-> adicionar um arquivo que foi alterado no commit              | git add
+-> comitar as alterações de um arquivos especifico              | git commit <arquivo> -m "<mensagem>"
+-> comitar todas as alterações de todos os arquivos modificados | git commit -a -m "<mensagem>"
+-> enviar os comits localmente para a origem                    | git push origin main
+-> 
