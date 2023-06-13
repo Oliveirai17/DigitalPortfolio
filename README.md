@@ -3,7 +3,7 @@
 Bem-vindo ao meu portfólio pessoal! Aqui você encontrará uma seleção dos meus projetos, estudos e trabalhos recentes, demonstrando minhas habilidades e experiências nas áreas de Dados.
 
 ## Sobre Mim
-Como Engenheiro de Dados, sou apaixonado poraprender e compartilhar conhecimentos com aspessoas. Minhas principais características profissionaisincluem: dedicação, responsabilidade, disciplina,disponibilidade, pontualidade, dinamismo eflexibilidade. Conhecimentos em programação emPython, ETL, gerenciamento de banco de dados emodelagem de dados, experiência em projetos de bigdata em diversas áreas, incluindo finanças. Buscoconstantemente me atualizar sobre as últimastecnologias e tendências em análise de dados e estousempre motivado a aplicar esse conhecimento paraajudar empresas a tomar decisões mais informadas ebaseadas em evidências.
+Como Engenheiro de Dados, sou apaixonado por aprender e compartilhar conhecimentos com as pessoas. Minhas principais características profissionais incluem: dedicação, responsabilidade, disciplina, disponibilidade, pontualidade, dinamismo eflexibilidade. Conhecimentos em programação emPython, ETL, gerenciamento de banco de dados emodelagem de dados, experiência em projetos de bigdata em diversas áreas, incluindo finanças. Busco constantemente me atualizar sobre as últimas tecnologias e tendências em análise de dados e estou sempre motivado a aplicar esse conhecimento paraajudar empresas a tomar decisões mais informadas e baseadas em evidências.
 
 
 ## Tecnologias e Habilidades
