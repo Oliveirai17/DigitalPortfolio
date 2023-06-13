@@ -1,0 +1,4 @@
+AWS -> RDS, Aurora, redshift
+AZURE -> SQL, MySql, PostegreeSQL
+GCP ->  Cloud SQL, CloudSpanner
+
