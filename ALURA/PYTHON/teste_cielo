@@ -1,0 +1,60 @@
+# 01 - importe os módulos PySpark/Python necessários para realização da atividade.
+from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType, StructField, IntegerType, TimestampType
+from pyspark.sql.functions import hour, minute, expr, udf
+from pyspark.sql.types import StringType
+
+# 02 – Instancie o SparkSession
+spark = SparkSession.builder.appName("Exercicios Spark").getOrCreate()
+
+# 03 – Crie um schema utilizando StructType e StructField que contenha 2 colunas chamadas “id” e “data” e que seja do tipo integer e timestamp.
+schema = StructType([
+    StructField("id", IntegerType(), True),
+    StructField("data", TimestampType(), True)
+])
+
+# 04 – Em uma variável chamada “dados”, preencha os dados da coluna “id” com 1,2 e 3 e com a coluna “data” preencha com os dados abaixo:
+dados = [(1, "2023-07-28 12:30:15"),
+         (2, "2023-03-02 20:43:22"),
+         (3, "2023-10-19 08:15:49")]
+
+# 05 - Crie o Dataframe.
+df = spark.createDataFrame(dados, schema)
+
+# 06 – Crie novas colunas separando a data em partes (Ano, Mês, Dia, Hora, Minuto e Segundos).
+df = df.withColumn("ano", expr("year(data)"))
+df = df.withColumn("mes", expr("month(data)"))
+df = df.withColumn("dia", expr("day(data)"))
+df = df.withColumn("hora", expr("hour(data)"))
+df = df.withColumn("minuto", expr("minute(data)"))
+df = df.withColumn("segundos", expr("second(data)"))
+
+# 07 - Crie outro Dataframe (df2, schema2, dados2) com as colunas “id” e “Letras”, a coluna “id” deve conter os mesmos dados do Dataframe anterior, a coluna “Letras” preencha com “a”, “b” e “c”.
+schema2 = StructType([
+    StructField("id", IntegerType(), True),
+    StructField("Letras", StringType(), True)
+])
+dados2 = [(1, "a"),
+          (2, "b"),
+          (3, "c")]
+
+df2 = spark.createDataFrame(dados2, schema2)
+
+# 08 - Realizar Inner Join entre df e df2 baseado na coluna 'id'.
+df_join = df.join(df2, on="id", how="inner")
+
+# 09 – Verifique na coluna minuto, se o minuto for maior ou igual a 30 mantém, se ele for menor que 30 altere para 00.
+df_join = df_join.withColumn("minuto", expr("case when minuto >= 30 then minuto else 0 end"))
+
+# 10 – Aplique a função abaixo na coluna “Letras”:
+
+def converter_para_maiusculas(texto):
+    return texto.upper()
+
+converter_udf = udf(converter_para_maiusculas, StringType())
+
+df_join = df_join.withColumn("Letras", converter_udf("Letras"))
+
+# 11 - Mostre como a tabela ficou e seus types.
+df_join.show()
+df_join.printSchema()
